@@ -1,0 +1,20 @@
+<%- include('header.ejs') %>
+<div class="container text-center">
+    <h1 class="text-center my-5">Welcome to the Login App</h1>
+    <p class="lead"> This simple app tells you whether or not you are currently logged in. 
+    <p class="lead"> If you are logged in, the app will display a message indicating that you are logged in. </p>
+    <p class="lead"> If you are not logged in, the app will display a message indicating that you are not logged in.</p>
+    <div class="card mt-5 w-50 mx-auto">
+      <div class="card-body">
+        <h5 class="card-title">Your Logged In Status:</h5>
+        <% if(!session.loggedin) { %>
+        <p class="card-text">You are currently <strong>not</strong> logged in.</p>
+        <% } else { %>
+        <p class="card-text">Hello <strong id="loginStatus"><%= session.username %></strong>, you <strong>logged</strong> in!</p>   
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html> 
